@@ -122,6 +122,16 @@ public class MarkdownParseTest {
         Path fileName = Path.of("test-file8.md");
         String content = Files.readString(fileName);
         assertEquals(MarkdownParse.getLinks(content),linksList);
+    }
 
+    @Test
+    public void getLinksTestNewFile9() throws IOException{
+        //create list of answer links
+        List<String> linksList = List.of();
+
+        //get the file data, read it as a string and passs it into the markdown parse function
+        Path fileName = Path.of("test-file9.md");
+        String content = Files.readString(fileName);
+        assertEquals(MarkdownParse.getLinks(content),linksList);
     }
 }
