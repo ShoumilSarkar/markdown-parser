@@ -94,7 +94,7 @@ public class MarkdownParseTest {
     @Test
     public void getLinksTestNewFile6() throws IOException{
         //create list of answer links
-        List<String> linksList = List.of("page.com");
+        List<String> linksList = List.of();
 
         //get the file data, read it as a string and passs it into the markdown parse function
         Path fileName = Path.of("test-file6.md");
