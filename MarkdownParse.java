@@ -24,7 +24,7 @@ public class MarkdownParse {
             }else{
                 String s = markdown.substring(openParen + 1, closeParen);
                 if(!(s.contains("[")||s.contains("("))){
-                    if((openParen == closeBracket+1)&&(openBracket==0||markdown.charAt(openBracket)!="!")){
+                    if((openParen == closeBracket+1)&&(openBracket==0||markdown.charAt(openBracket)!='!')){
                         toReturn.add(markdown.substring(openParen + 1, closeParen));
                     }
                 }
