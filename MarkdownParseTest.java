@@ -134,4 +134,37 @@ public class MarkdownParseTest {
         String content = Files.readString(fileName);
         assertEquals(MarkdownParse.getLinks(content),linksList);
     }
+
+    @Test
+    public void getLinksTestSnippet1() throws IOException{
+        //create list of answer links
+        List<String> linksList = List.of("`google.com","google.com","ucsd.edu");
+
+        //get the file data, read it as a string and passs it into the markdown parse function
+        Path fileName = Path.of("Snippet1.md");
+        String content = Files.readString(fileName);
+        assertEquals(linksList,MarkdownParse.getLinks(content));
+    }
+
+    @Test
+    public void getLinksTestSnippet2() throws IOException{
+        //create list of answer links
+        List<String> linksList = List.of("a.com","a.com(())","example.com");
+
+        //get the file data, read it as a string and passs it into the markdown parse function
+        Path fileName = Path.of("Snippet2.md");
+        String content = Files.readString(fileName);
+        assertEquals(linksList,MarkdownParse.getLinks(content));
+    }
+
+    @Test
+    public void getLinksTestSnippet3() throws IOException{
+        //create list of answer links
+        List<String> linksList = List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+
+        //get the file data, read it as a string and passs it into the markdown parse function
+        Path fileName = Path.of("Snippet3.md");
+        String content = Files.readString(fileName);
+        assertEquals(linksList,MarkdownParse.getLinks(content));
+    }
 }
